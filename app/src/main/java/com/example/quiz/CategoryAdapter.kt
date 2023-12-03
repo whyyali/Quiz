@@ -1,5 +1,6 @@
 package com.example.quiz
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,11 +28,17 @@ class CategoryAdapter(private val categoryModelList: List<CategoryModel>) : Recy
     class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val imageView: CircleImageView = itemView.findViewById(R.id.imageView)
         private val title: TextView = itemView.findViewById(R.id.title)
-
-        public fun setData(url: String , titleValue: String) {
+         fun setData(url: String , titleValue: String) {
             Glide.with(itemView.context).load(url).into(imageView)
             title.text = titleValue
+
+             itemView.setOnClickListener{
+                 val setIntent = Intent(itemView.context, SetsActivity::class.java)
+                 setIntent.putExtra("title", titleValue)
+                 itemView.context.startActivity(setIntent)
+             }
         }
+
 
     }
 
