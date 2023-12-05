@@ -16,7 +16,7 @@ class SetsActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = intent.getStringExtra("title")
 
-        val gridView = findViewById<GridView>(R.id.gridView)
+        val gridView : GridView = findViewById(R.id.gridView)
 
         val gridAdapter = GridAdapter(10)
         gridView.adapter = gridAdapter

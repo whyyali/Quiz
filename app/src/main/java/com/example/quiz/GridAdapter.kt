@@ -1,5 +1,6 @@
 package com.example.quiz
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,12 @@ class GridAdapter(private var sets: Int = 0) : BaseAdapter() {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View = convertView?: LayoutInflater.from(parent?.context).inflate(R.layout.set_item, parent, false)
+
+        view.setOnClickListener {
+            val questionIntent = Intent(parent?.context , QuestionsActivity::class.java)
+            parent?.context?.startActivity(questionIntent)
+        }
+
         val  textView = view.findViewById<TextView>(R.id.textview)
         textView.text = (position + 1).toString()
         return view

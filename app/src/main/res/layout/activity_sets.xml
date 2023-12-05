@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".SetsActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -22,12 +23,16 @@
         android:textColor="@color/black"
         android:padding="16dp"
         />
-    <GridLayout
+    <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:columnCount="3"
+        android:layout_margin="4dp"
+        android:columnWidth="120dp"
+        android:numColumns="auto_fit"
         android:layout_gravity="center"
+        android:horizontalSpacing="16dp"
+        android:verticalSpacing="16dp"
         />
 </LinearLayout>
