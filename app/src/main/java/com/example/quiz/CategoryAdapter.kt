@@ -18,7 +18,7 @@ class CategoryAdapter(private val categoryModelList: List<CategoryModel>) : Recy
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.setData(categoryModelList[position].getImageUrl(), categoryModelList[position].getTitle())
+        holder.setData(categoryModelList[position].getUrl(), categoryModelList[position].getName())
     }
 
     override fun getItemCount(): Int {
